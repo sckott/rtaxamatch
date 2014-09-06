@@ -1,0 +1,7 @@
+Package: rtaxamatch
+Title: What the package does (short line)
+Version: 0.1
+Authors@R: person("Scott","Chamberlain","myrmecocystus@gmail.com",c("aut", "cre"))
+Description: What the package does (paragraph)
+License: MIT + file LICENSE
+LazyData: true
