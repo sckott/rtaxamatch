@@ -6,3 +6,5 @@ Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"),
 Description: Taxon name parser
 License: MIT + file LICENSE
 LazyData: true
+Imports:
+    stringr
