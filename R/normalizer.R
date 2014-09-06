@@ -5,7 +5,7 @@
 #' @examples
 #' normalize(string="Helianthus annuüos  ")
 normalize <- function(string){
-  string <- trm_ends(string)
+  string <- str_trim(string, "both")
   string <- toupper(string)
   res <- utf8_to_ascii(string)
   gsub('[^\x20-\x7F]', '?', res)
@@ -21,7 +21,7 @@ normalize <- function(string){
 normalize_word <- function(word){
   ss <- gsub('^[A-Z][0-9]-', '', word)
   ss <- normalize(ss)
-  trm_ends(ss)
+  str_trim(ss, "both")
 }
 
 #' Normalize an author
@@ -34,7 +34,7 @@ normalize_author <- function(string){
   ss <- normalize(string)
   ss <- gsub('[^A-Z]', ' ', ss)
   ss <- gsub('[\\s]{2,}', ' ', ss)
-  trm_ends(ss)
+  str_trim(ss, "both")
 }
 
 #' Normalize a year
@@ -51,9 +51,15 @@ normalize_year <- function(year){
   if(!test) NULL else year
 }
 
+#' UTF-8 to ASCII
+#' @export
+#' @keywords internal
+#' @param string A string to convert any utf8 to ascii
 utf8_to_ascii <- function(string){
-  ss <- gsub("×", "x", string)
-  ss <- gsub('[ÀÂÅÃÄÁẤẠÁáàâåãäăãắảạậầằá]', "A", ss)
+#   ss <- gsub("×", "x", string)
+  ss <- gsub('\u00D7', "x", string)
+#   ss <- gsub('[ÀÂÅÃÄÁẤẠÁáàâåãäăãắảạậầằá]', "A", ss)
+  ss <- gsub('[\u00C0\u00C2\u00C5\u00C3\u00C4ÁẤẠÁáàâåãäăãắảạậầằá]', "A", ss)
   ss <- gsub('[ÉÈÊËéèêëĕěếệểễềẻ]', "E", ss)
   ss <- gsub('[ÍÌÎÏíìîïǐĭīĩỉï]', "I", ss)
   ss <- gsub('[ÓÒÔØÕÖỚỔóòôøõöŏỏỗộơọỡốơồờớổő]', "O", ss)
