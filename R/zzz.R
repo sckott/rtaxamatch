@@ -19,4 +19,23 @@ txm_capwords <- function(s, strict = FALSE, onlyfirst = FALSE) {
   }
 }
 
-trm_ends <- function(x) gsub("\\s+$|^\\s+", "", x)
+squeeze <- function(x) gsub("([[:alnum:]])(\\1)+", "\\1", x, perl=TRUE)
+
+#' Replace x with y in a string
+#' @export
+#' @param str Target string
+#' @param src Characters to replace
+#' @param repl Replacement characters
+#' @examples
+#' tr(str='HELIANTHUS ANNUS', src='EOUYKZ', repl='IAIICS')
+tr <- function(str, src, repl){
+  foo <- function(x,y,z) gsub(x, y, z)
+
+  src <- strsplit(src, '')[[1]]
+  repl <- strsplit(repl, '')[[1]]
+
+  for(i in seq_along(src)){
+    str <- foo(src[i], repl[i], str)
+  }
+  str
+}
