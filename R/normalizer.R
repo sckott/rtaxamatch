@@ -59,8 +59,9 @@ utf8_to_ascii <- function(string){
 #   ss <- gsub("×", "x", string)
   ss <- gsub('\u00D7', "x", string)
 #   ss <- gsub('[ÀÂÅÃÄÁẤẠÁáàâåãäăãắảạậầằá]', "A", ss)
-  ss <- gsub('[\u00C0\u00C2\u00C5\u00C3\u00C4ÁẤẠÁáàâåãäăãắảạậầằá]', "A", ss)
-  ss <- gsub('[ÉÈÊËéèêëĕěếệểễềẻ]', "E", ss)
+  ss <- gsub(letter_a, "A", ss)
+#   ss <- gsub('[ÉÈÊËéèêëĕěếệểễềẻ]', "E", ss)
+  ss <- gsub(letter_e, "E", ss)
   ss <- gsub('[ÍÌÎÏíìîïǐĭīĩỉï]', "I", ss)
   ss <- gsub('[ÓÒÔØÕÖỚỔóòôøõöŏỏỗộơọỡốơồờớổő]', "O", ss)
   ss <- gsub('[ÚÙÛÜúùûüůưừựủứụű]', "U", ss)
@@ -78,3 +79,6 @@ utf8_to_ascii <- function(string){
   ss <- gsub('[Řř]', "R", ss)
   gsub('[[:space:]]{2,}', ' ', ss)
 }
+
+letter_a <- '[\u00C0\u00C2\u00C5\u00C3\u00C4\u00C1\u1EA4\u1EA0\u00E1\u00E0\u00E2\u00E5\u00E3\u00E4\u0103\u00E3\u1EAF\u1EA3\u1EA1\u1EAD\u1EA7\u1EB1\u00E1]'
+letter_e <- '[\u00C9\u00C8\u00CA\u00CB\u00E9\u00E8\u00EA\u00EB\u0115\u011B\u1EBF\u1EC7\u1EC3\u1EC5\u1EC1\u1EBB]'
