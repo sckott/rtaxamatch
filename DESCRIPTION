@@ -1,10 +1,14 @@
 Package: rtaxamatch
 Title: Taxon name parser
-Version: 0.1
+Version: 0.0.1.99
+Date: 2014-09-09
 Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"),
     email = "myrmecocystus@gmail.com")
 Description: Taxon name parser
 License: MIT + file LICENSE
+URL: https://github.com/sckott/rtaxamatch
+BugReports: https://github.com/sckott/rtaxamatch/issues
 LazyData: true
+Encoding: UTF-8
 Imports:
     stringr
