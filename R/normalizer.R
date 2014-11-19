@@ -42,7 +42,7 @@ normalize_author <- function(string){
 #' @export
 #' @param year A year string
 #' @examples
-#' normalize_year(year='2010')
+#' normalize_year('2010')
 normalize_year <- function(year){
 #   year_int <-
 #     gsub('[^0-9]', '', year_string)
@@ -97,7 +97,6 @@ utf8_to_ascii <- function(string){
 
 letter_a <- '[\u00C0\u00C2\u00C5\u00C3\u00C4\u00C1\u1EA4\u1EA0\u00E1\u00E0\u00E2\u00E5\u00E3\u00E4\u0103\u00E3\u1EAF\u1EA3\u1EA1\u1EAD\u1EA7\u1EB1\u00E1]'
 letter_e <- '[\u00C9\u00C8\u00CA\u00CB\u00E9\u00E8\u00EA\u00EB\u0115\u011B\u1EBF\u1EC7\u1EC3\u1EC5\u1EC1\u1EBB]'
-
 letter_i <- '[\u00CD\u00CC\u00CE\u00CF\u00ED\u00EC\u00EF\u01D0\u012D\u012B\u0129\u1Ec9\u00EF]'
 letter_o <- '[\u00D3\u00D2\u00D4\u00D8\u00D5\u00D6\u1EDA\u1ED4\u00F3\u00F2\u00F4\u00F8\u00F5\u00F6\u014F\u1ECF\u1ED7\u1ED9\u01A1\u1ECD\u1EE1\u1ED1\u01A1\u1ED3\u1EDD\u1EDB\u1ED5\u0151]'
 letter_u <- '[\u00DA\u00D9\u00DB\u00DC\u00FA\u00F9\u00FB\u00FC\u016F\u01B0\u1EEB\u1EF1\u1EE7\u1EE9\u1EE5\u0171]'

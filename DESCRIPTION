@@ -1,7 +1,7 @@
 Package: rtaxamatch
 Title: Taxon name parser
 Version: 0.0.1.99
-Date: 2014-09-09
+Date: 2014-11-19
 Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"),
     email = "myrmecocystus@gmail.com")
 Description: Taxon name parser
@@ -11,4 +11,5 @@ BugReports: https://github.com/sckott/rtaxamatch/issues
 LazyData: true
 Encoding: UTF-8
 Imports:
-    stringr
+    stringr,
+    stringdist
